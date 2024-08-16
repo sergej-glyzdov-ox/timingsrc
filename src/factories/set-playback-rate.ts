@@ -14,9 +14,8 @@ export const createSetPlaybackRate = (
             // Bug #6: Chrome does not adjust the tempo when the playbackRate is very close to 1.
 
             console.log('nextValue', nextValue);
-            console.log('min-max = ', positiveMinimum, negativeMaximum);
 
-            mediaElement.playbackRate = nextValue > 1 ? Math.max(positiveMinimum, nextValue) : Math.min(negativeMaximum, nextValue);
+            mediaElement.playbackRate = Math.min(nextValue > 1 ? Math.max(positiveMinimum, nextValue) : Math.min(negativeMaximum, nextValue), 2);
 
             playbackRateAssignments.set(mediaElement, [mediaElement.playbackRate, nextValue]);
         }
