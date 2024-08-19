@@ -1,5 +1,6 @@
 import { createSetTimingsrc } from './factories/set-timingsrc';
 import { createUpdateGradually } from './factories/update-gradually';
+import 'core-js/actual';
 export { createSetTimingsrc };
 export { createUpdateGradually };
 export declare const createUpdateStepwise: (tolerance: number) => import("./types").TUpdateFunction<import("./interfaces").IUpdateVector & {
